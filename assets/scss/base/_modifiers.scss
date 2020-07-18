@@ -1,3 +1,5 @@
+/* Colors
+========================================================================== */
 @each $pallet, $value in $scotch-colors {
     @each $name in $value {
         $i: index($value, $name);
@@ -9,6 +11,52 @@
 
         .u-bg-#{$pallet}-#{$i} {
             background-color: #{$name};
+        }
+    }
+}
+
+/* Spaces for the grid
+========================================================================== */
+@for $i from 1 through 15 {
+    .u-space-h-#{$i} {
+        margin-left: -(5px * $i);
+        margin-right: -(5px * $i);
+
+        > .l-grid__item {
+            padding-left: 5px * $i;
+            padding-right: 5px * $i;
+        }
+    }
+
+    .u-space-v-#{$i} {
+        margin-bottom: -(5px * $i);
+
+        > .l-grid__item {
+            margin-bottom: 5px * $i;
+        }
+    }
+}
+
+@each $name, $value in $breakpoints {
+    @include media("<=#{$name}") {
+        @for $i from 1 through 15 {
+            .u-space-h-#{$i}\@#{$name} {
+                margin-left: -(5px * $i);
+                margin-right: -(5px * $i);
+
+                > .l-grid__item {
+                    padding-left: 5px * $i;
+                    padding-right: 5px * $i;
+                }
+            }
+
+            .u-space-v-#{$i}\@#{$name} {
+                margin-bottom: -(5px * $i);
+
+                > .l-grid__item {
+                    margin-bottom: 5px * $i;
+                }
+            }
         }
     }
 }

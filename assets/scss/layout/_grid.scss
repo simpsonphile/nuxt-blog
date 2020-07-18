@@ -1,0 +1,39 @@
+.l-grid {
+    align-items: stretch;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+
+    display: flex;
+}
+
+.l-grid__item {
+    display: block;
+}
+
+.l-grid__item > * {
+    width: 100%;
+}
+
+@for $i from 1 through 12 {
+    .l-grid__item-#{$i} {
+        width: 100% / 12 * $i;
+    }
+}
+
+@each $name, $value in $breakpoints {
+    @include media("<=#{$name}") {
+        @for $i from 1 through 12 {
+            .l-grid__item-#{$i}\@#{$name} {
+                width: 100% / 12 * $i;
+            }
+        }
+    }
+}
+
+.l-grid--full-height-cells {
+    align-items: stretch;
+
+    .l-grid__item > * {
+        height: 100%;
+    }
+}
