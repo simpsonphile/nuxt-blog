@@ -23,6 +23,37 @@ $color_dark_4: tint($color_dark_1, 15%);
 $color_dark_5: tint($color_dark_1, 20%);
 
 
+$scotch-colors: (
+    'ruby': (
+        $color_ruby_1
+    ),
+    'keppel': (
+        $color_keppel_1
+    ),
+    'xiketic': (
+        $color_xiketic_1
+    ),
+    'true_blue': (
+        $color_true_blue_1
+    ),
+    'tufts_blue': (
+        $color_tufts_blue_1
+    ),
+    'dark': (
+        $color_dark_1,
+        $color_dark_2,
+        $color_dark_3,
+        $color_dark_4,
+        $color_dark_5
+    ),
+    'white': (
+        $color_white_1
+        $color_white_2
+        $color_white_3
+    )
+);
+
+
 /* General
 ========================================================================== */
 $transition_speed: 200ms;
