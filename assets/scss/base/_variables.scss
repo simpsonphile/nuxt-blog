@@ -1,3 +1,32 @@
+@import 'mixins';
+
+/* Colors
+========================================================================== */
+$color_ruby_1: #db1a64;
+
+$color_xiketic_1: #0f1020;
+
+$color_keppel_1: #44bba4;
+
+$color_true_blue_1: #3066be;
+
+$color_tufts_blue_1: #3c91e6;
+
+$color_white_1: #ffffff;
+$color_white_2: shade($color_white_1, 5%);
+$color_white_3: shade($color_white_1, 10%);
+
+$color_dark_1: #0A090C;
+$color_dark_2: tint($color_dark_1, 5%);
+$color_dark_3: tint($color_dark_1, 10%);
+$color_dark_4: tint($color_dark_1, 15%);
+$color_dark_5: tint($color_dark_1, 20%);
+
+
+/* General
+========================================================================== */
+$transition_speed: 200ms;
+
 /* Breakpoints
 ========================================================================== */
 $breakpoints: (
