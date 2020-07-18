@@ -46,8 +46,7 @@ export default {
         },
         theme: {
             type: [String, Number],
-            default: '1',
-            validator: prop => prop === parseInt(prop)
+            default: '1'
         }
     },
     computed: {
