@@ -3,6 +3,7 @@
         :is="tag"
         :href="tag === 'a' ? href : false"
         :to="tag === 'nuxt-link' ? href : false"
+        :type="tag === 'button' ? type : false"
         class="c-btn"
         :class="classes">
         <div class="c-btn__wrapper">
@@ -39,12 +40,17 @@ export default {
         },
         type: {
             type: String,
-            default: 'primary',
-            validator: prop => [
-                'primary'
-            ]
+            default: 'button'
         },
         theme: {
+            type: String,
+            default: 'primary',
+            validator: prop => [
+                'primary',
+                'link'
+            ]
+        },
+        colorTheme: {
             type: [String, Number],
             default: '1'
         }
@@ -52,8 +58,8 @@ export default {
     computed: {
         classes () {
             return [
-                this.type ? `c-btn--t-${this.type}` : '',
-                this.theme ? `c-btn--th-${this.theme}` : ''
+                this.theme ? `c-btn--t-${this.theme}` : '',
+                this.colorTheme ? `c-btn--th-${this.colorTheme}` : ''
             ]
         }
     }
@@ -103,14 +109,61 @@ export default {
     /* Types
     ========================================================================== */
     .c-btn--t-primary {
+        --color: #{$color_white_1};
+        --background-color: transparent;
+        --border-color: transparent;
+
         height: 4rem;
         padding: 0 1.5rem;
 
-        border-radius: 1rem;
+        border-radius: 1.5rem;
+        border: 2px solid transparent;
+        border-color: var(--border-color);
+        background-color: var(--background-color);
+        color: var(--color);
+
+        &:hover {
+            border-color: var(--border-color-hover);
+            background-color: var(--background-color-hover);
+            color: var(--color-hover);
+        }
     }
 
     .c-btn--t-primary.c-btn--th-1 {
-        background-color: $color_ruby_1;
-        color: $color_white_1;
+        --background-color: #{$color_ruby_1};
+        --border-color: #{$color_ruby_1};
+        --color: #{$color_white_1};
+
+        --background-color-hover: #{$color_ruby_3};
+        --border-color-hover: #{$color_ruby_3};
+        --color-hover: #{$color_white_1};
+    }
+
+    .c-btn--t-primary.c-btn--th-2 {
+        --background-color: #{$color_keppel_1};
+        --border-color: #{$color_keppel_1};
+        --color: #{$color_white_1};
+
+        --background-color-hover: #{$color_keppel_3};
+        --border-color-hover: #{$color_keppel_1};
+        --color-hover: #{$color_white_1};
+    }
+
+    .c-btn--t-primary.c-btn--th-3 {
+        --border-color: #{$color_ruby_1};
+        --color: #{$color_ruby_1};
+
+        --background-color-hover: #{$color_ruby_1};
+        --border-color-hover: #{$color_ruby_1};
+        --color-hover: #{$color_white_1};
+    }
+
+    .c-btn--t-primary.c-btn--th-4 {
+        --border-color: #{$color_keppel_1};
+        --color: #{$color_keppel_1};
+
+        --background-color-hover: #{$color_keppel_1};
+        --border-color-hover: #{$color_keppel_1};
+        --color-hover: #{$color_white_1};
     }
 </style>

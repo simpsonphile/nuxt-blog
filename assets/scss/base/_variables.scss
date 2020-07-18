@@ -3,10 +3,18 @@
 /* Colors
 ========================================================================== */
 $color_ruby_1: #db1a64;
+$color_ruby_2: tint($color_ruby_1, 5%);
+$color_ruby_3: tint($color_ruby_1, 10%);
+$color_ruby_4: tint($color_ruby_1, 15%);
+$color_ruby_5: tint($color_ruby_1, 20%);
 
 $color_xiketic_1: #0f1020;
 
 $color_keppel_1: #44bba4;
+$color_keppel_2: tint($color_keppel_1, 5%);
+$color_keppel_3: tint($color_keppel_1, 10%);
+$color_keppel_4: tint($color_keppel_1, 15%);
+$color_keppel_5: tint($color_keppel_1, 20%);
 
 $color_true_blue_1: #3066be;
 
