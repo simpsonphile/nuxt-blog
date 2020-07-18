@@ -13,6 +13,7 @@
   "dependencies": {
     "@nuxtjs/style-resources": "^1.0.0",
     "include-media": "^1.4.9",
+    "normalize.css": "^8.0.1",
     "nuxt": "^2.13.0"
   },
   "devDependencies": {
