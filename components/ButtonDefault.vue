@@ -104,7 +104,7 @@ export default {
     /* Types
     ========================================================================== */
     .c-btn--t-primary {
-        height: 4.4rem;
+        height: 4rem;
         padding: 0 1.5rem;
 
         border-radius: 1rem;
