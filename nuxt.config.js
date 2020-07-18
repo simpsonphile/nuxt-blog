@@ -30,6 +30,7 @@ export default {
   */
   css: [
     '@/assets/scss/main.scss'
+
   ],
   /*
   ** Plugins to load before mounting the App
@@ -55,6 +56,7 @@ export default {
   ],
   styleResources: {
     scss: [
+      '@/node_modules/include-media/dist/_include-media.scss',
       './assets/scss/base/_variables.scss'
     ]
   },
