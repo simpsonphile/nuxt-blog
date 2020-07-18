@@ -1,0 +1,15 @@
+/* MIXINS AND VARIABLES
+========================================================================== */
+@import "node_modules/include-media/dist/_include-media.scss";
+@import "base/variables";
+@import "base/mixins";
+
+/* Make css reset
+========================================================================== */
+@import "node_modules/normalize.css/normalize.css";
+
+/* Global CSS
+========================================================================== */
+@import "base/fonts";
+@import "base/typography";
+@import "base/animations";
