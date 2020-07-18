@@ -53,13 +53,24 @@ export default {
         colorTheme: {
             type: [String, Number],
             default: '1'
+        },
+        size: {
+            type: String,
+            default: 'normal',
+            validator: prop => [
+                'tiny',
+                'small',
+                'normal',
+                'big'
+            ]
         }
     },
     computed: {
         classes () {
             return [
                 this.theme ? `c-btn--t-${this.theme}` : '',
-                this.colorTheme ? `c-btn--th-${this.colorTheme}` : ''
+                this.colorTheme ? `c-btn--th-${this.colorTheme}` : '',
+                this.size ? `c-btn--s-${this.size}` : ''
             ]
         }
     }
@@ -127,6 +138,13 @@ export default {
             background-color: var(--background-color-hover);
             color: var(--color-hover);
         }
+    }
+
+    .c-btn--t-primary.c-btn--s-tiny {
+        height: 2rem;
+        padding: 0 0.5rem;
+
+        font-size: 1.2rem;
     }
 
     .c-btn--t-primary.c-btn--th-1 {
