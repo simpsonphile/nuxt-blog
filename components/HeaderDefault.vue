@@ -18,12 +18,17 @@ export default {
                 'm',
                 'b'
             ].includes(prop)
+        },
+        color: {
+            type: String,
+            default: 'dark-1'
         }
     },
     computed: {
         classes () {
             return [
-                this.size ? `t-header--s-${this.size}` : ''
+                this.size ? `t-header--s-${this.size}` : '',
+                this.color ? `u-paint-${this.color}` : ''
             ]
         }
     }
