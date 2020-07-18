@@ -15,6 +15,11 @@ export default {
         size: {
             type: String,
             default: 'm',
+            validator: prop => [
+                's',
+                'm',
+                'b'
+            ].includes(prop)
         },
         color: {
             type: String
