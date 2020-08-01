@@ -19,20 +19,20 @@
 ========================================================================== */
 @for $i from 1 through 15 {
     .u-space-h-#{$i} {
-        margin-left: -(5px * $i);
-        margin-right: -(5px * $i);
+        margin-left: -(4px * $i);
+        margin-right: -(4px * $i);
 
         > .l-grid__item {
-            padding-left: 5px * $i;
-            padding-right: 5px * $i;
+            padding-left: 4px * $i;
+            padding-right: 4px * $i;
         }
     }
 
     .u-space-v-#{$i} {
-        margin-bottom: -(5px * $i);
+        margin-bottom: -(4px * $i);
 
         > .l-grid__item {
-            margin-bottom: 5px * $i;
+            margin-bottom: 4px * $i;
         }
     }
 }
@@ -41,20 +41,20 @@
     @include media("<=#{$name}") {
         @for $i from 1 through 15 {
             .u-space-h-#{$i}\@#{$name} {
-                margin-left: -(5px * $i);
-                margin-right: -(5px * $i);
+                margin-left: -(4px * $i);
+                margin-right: -(4px * $i);
 
                 > .l-grid__item {
-                    padding-left: 5px * $i;
-                    padding-right: 5px * $i;
+                    padding-left: 4px * $i;
+                    padding-right: 4px * $i;
                 }
             }
 
             .u-space-v-#{$i}\@#{$name} {
-                margin-bottom: -(5px * $i);
+                margin-bottom: -(4px * $i);
 
                 > .l-grid__item {
-                    margin-bottom: 5px * $i;
+                    margin-bottom: 4px * $i;
                 }
             }
         }
