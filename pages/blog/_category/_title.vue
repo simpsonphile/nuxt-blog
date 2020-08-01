@@ -1,6 +1,6 @@
 <template>
   <div class="content">
-    <nuxt-content :document="art"></nuxt-content>
+    <post-content :art="art"></post-content>
   </div>
 </template>
 
