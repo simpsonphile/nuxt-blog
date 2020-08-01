@@ -22,6 +22,7 @@ export default {
     '@nuxt/components'
   ],
   modules: [
+    '@nuxt/content',
     '@nuxtjs/style-resources',
     '@nuxtjs/svg-sprite'
   ],
