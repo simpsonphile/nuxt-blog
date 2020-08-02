@@ -24,13 +24,19 @@ export default {
   modules: [
     '@nuxt/content',
     '@nuxtjs/style-resources',
-    '@nuxtjs/svg-sprite'
+    '@nuxtjs/svg-sprite',
+    'nuxt-responsive-loader'
   ],
   styleResources: {
     scss: [
       '@/node_modules/include-media/dist/_include-media.scss',
       './assets/scss/base/_variables.scss'
     ]
+  },
+  responsiveLoader: {
+    name: 'img/[name]-[width].[ext]',
+    quality: 65,
+    sizes: [480, 640, 1280, 1920]
   },
   build: {}
 }
