@@ -50,27 +50,16 @@ export default {
                 'link'
             ]
         },
-        colorTheme: {
+        variation: {
             type: [String, Number],
             default: '1'
-        },
-        size: {
-            type: String,
-            default: 'normal',
-            validator: prop => [
-                'tiny',
-                'small',
-                'normal',
-                'big'
-            ]
         }
     },
     computed: {
         classes () {
             return [
-                this.theme ? `c-btn--t-${this.theme}` : '',
-                this.colorTheme ? `c-btn--th-${this.colorTheme}` : '',
-                this.size ? `c-btn--s-${this.size}` : ''
+                this.theme ? `c-btn--th-${this.theme}` : '',
+                this.variation ? `c-btn--v-${this.variation}` : ''
             ]
         }
     }
@@ -119,69 +108,25 @@ export default {
 
     /* Types
     ========================================================================== */
-    .c-btn--t-primary {
-        --color: #{$color_white_1};
-        --background-color: transparent;
-        --border-color: transparent;
-
+    .c-btn--th-primary {
         height: 4rem;
-        padding: 0 1.5rem;
+        padding: 0 1.6rem;
 
-        border-radius: 1.5rem;
-        border: 2px solid transparent;
-        border-color: var(--border-color);
-        background-color: var(--background-color);
+        border-radius: .8rem;
+        background-color: var(--bg-color);
         color: var(--color);
 
+        font-family: var(--font-normal);
+
         &:hover {
-            border-color: var(--border-color-hover);
-            background-color: var(--background-color-hover);
-            color: var(--color-hover);
+            background-color: var(--bg-color-hover);
         }
     }
 
-    .c-btn--t-primary.c-btn--s-tiny {
-        height: 2rem;
-        padding: 0 0.5rem;
+    .c-btn--th-primary.c-btn--v-1 {
+        --bg-color: var(--ruby);
+        --color: var(--white);
 
-        font-size: 1.2rem;
-    }
-
-    .c-btn--t-primary.c-btn--th-1 {
-        --background-color: #{$color_ruby_1};
-        --border-color: #{$color_ruby_1};
-        --color: #{$color_white_1};
-
-        --background-color-hover: #{$color_ruby_3};
-        --border-color-hover: #{$color_ruby_3};
-        --color-hover: #{$color_white_1};
-    }
-
-    .c-btn--t-primary.c-btn--th-2 {
-        --background-color: #{$color_keppel_1};
-        --border-color: #{$color_keppel_1};
-        --color: #{$color_white_1};
-
-        --background-color-hover: #{$color_keppel_3};
-        --border-color-hover: #{$color_keppel_1};
-        --color-hover: #{$color_white_1};
-    }
-
-    .c-btn--t-primary.c-btn--th-3 {
-        --border-color: #{$color_ruby_1};
-        --color: #{$color_ruby_1};
-
-        --background-color-hover: #{$color_ruby_1};
-        --border-color-hover: #{$color_ruby_1};
-        --color-hover: #{$color_white_1};
-    }
-
-    .c-btn--t-primary.c-btn--th-4 {
-        --border-color: #{$color_keppel_1};
-        --color: #{$color_keppel_1};
-
-        --background-color-hover: #{$color_keppel_1};
-        --border-color-hover: #{$color_keppel_1};
-        --color-hover: #{$color_white_1};
+        --bg-color-hover: var(--ruby-t2);
     }
 </style>

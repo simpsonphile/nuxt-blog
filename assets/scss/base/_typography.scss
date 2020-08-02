@@ -2,14 +2,45 @@
     box-sizing: border-box;
 }
 
+:root {
+    /* Colors
+    ========================================================================== */
+    --ruby: #{$color_ruby};
+    --ruby-t2: #{$color_ruby_t2};
+
+    --keppel: #{$color_keppel};
+    --trueBlue: #{$color_true_blue};
+    --tuftsBlue: #{$color_tufts_blue};
+    --xiketic: #{$color_xiketic};
+    --dark: #{$color_dark};
+    --white: #{$color_white};
+
+    --box-shadow-soft: #{$box_shadow_soft};
+
+    --font-raleway: #{$font_raleway};
+    --font-lato: #{$font_lato};
+
+    --font-primary: var(--font-lato);
+    --font-normal: var(--font-raleway);
+
+    --textColor: var(--dark);
+    --bgColor: var(--white);
+}
+
 html {
     font-size: 62.5%;
 }
 
 body {
-    font-family: $font_normal;
+    font-family: var(--font-normal);
     font-size: 1.6rem;
     line-height: 1.35;
 
-    color: $color_dark_3;
+    background-color: var(--bgColor);
+    color: var(--textColor);
+}
+
+img {
+    display: block;
+    max-width: 100%;
 }

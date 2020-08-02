@@ -1,20 +1,3 @@
-/* Colors
-========================================================================== */
-@each $pallet, $value in $scotch-colors {
-    @each $name in $value {
-        $i: index($value, $name);
-
-        .u-paint-#{$pallet}-#{$i} {
-            color: #{$name};
-            fill: #{$name};
-        }
-
-        .u-bg-#{$pallet}-#{$i} {
-            background-color: #{$name};
-        }
-    }
-}
-
 /* Spaces for the grid
 ========================================================================== */
 @for $i from 1 through 15 {

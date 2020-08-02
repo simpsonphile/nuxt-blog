@@ -16,19 +16,14 @@ export default {
             validator: prop => [
                 's',
                 'm',
-                'b'
+                'l'
             ].includes(prop)
-        },
-        color: {
-            type: String,
-            default: 'dark-1'
         }
     },
     computed: {
         classes () {
             return [
-                this.size ? `t-header--s-${this.size}` : '',
-                this.color ? `u-paint-${this.color}` : ''
+                this.size ? `t-header--s-${this.size}` : ''
             ]
         }
     }

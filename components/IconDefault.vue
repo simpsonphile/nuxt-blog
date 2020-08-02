@@ -20,9 +20,6 @@ export default {
                 'm',
                 'b'
             ].includes(prop)
-        },
-        color: {
-            type: String
         }
     },
     computed: {
@@ -30,8 +27,7 @@ export default {
             return [
                 'o-ico',
                 this.name ? `o-ico--${this.name}` : '',
-                this.size ? `o-ico--s-${this.size}` : '',
-                this.color ? `u-paint-${this.color}` : ''
+                this.size ? `o-ico--s-${this.size}` : ''
             ]
         }
     }
