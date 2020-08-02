@@ -1,6 +1,6 @@
 <template>
   <div class="content">
-    <post-content :art="art"></post-content>
+    <post-template :art="art"></post-template>
   </div>
 </template>
 
@@ -9,13 +9,13 @@
 export default {
   async asyncData({ $content, params }) {
     const art = await $content(
-      "articles",
+      'articles',
       `${params.category}/${params.title}`
-    ).fetch();
+    ).fetch()
 
     return {
-      art,
-    };
-  },
-};
+      art
+    }
+  }
+}
 </script>
