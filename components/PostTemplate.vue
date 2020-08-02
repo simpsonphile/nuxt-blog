@@ -51,6 +51,10 @@ export default {
 .nuxt-content {
 	max-width: 60ch;
 	font-size: 2.2rem;
+
+	@include media('<=m') {
+		font-size: 1.8rem;
+	}
 }
 
 .nuxt-content h1,
@@ -70,9 +74,37 @@ export default {
 	&:not(:first-child) {
 		margin-top: 4rem;
 	}
+
+	@include media('<=m') {
+		font-size: 2.8rem;
+	}
+}
+
+.nuxt-content h3 {
+	font-size: 2.8rem;
+
+	@include media('<=m') {
+		font-size: 2.2rem;
+	}
+}
+
+.nuxt-content h4 {
+	font-size: 2.2rem;
+
+	@include media('<=m') {
+		font-size: 1.8rem;
+	}
 }
 
 .nuxt-content p {
+	margin: 0 0 3.2rem 0;
+
+	&:last-child {
+		margin: 0;
+	}
+}
+
+.nuxt-content picture {
 	margin: 0 0 3.2rem 0;
 
 	&:last-child {
