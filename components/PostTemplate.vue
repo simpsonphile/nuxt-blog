@@ -1,7 +1,7 @@
 <template>
 	<div class="c-post-template">
-		<layout isFull>
-			<div class="c-post-template__head">
+		<div class="c-post-template__head">
+			<layout>
 				<header-default>
 					<heading-default 
 						tag="h1"
@@ -9,20 +9,22 @@
 						{{ title }}
 					</heading-default>
 				</header-default>
+			</layout>
 
+			<layout isFull>
 				<picture-default
 					:src="image"
 					type="fit"
 					style="height: 300px"
 					:alt="title">
 				</picture-default>
-			</div>
-		</layout>
+			</layout>
+		</div>
 
 		<layout>
-			<div class="c-post-template__content">
+			<article class="c-post-template__content">
 				<nuxt-content :document="art"></nuxt-content>
-			</div>
+			</article>
 		</layout>
 	</div>
 </template>
@@ -48,6 +50,18 @@ export default {
 </script>
 
 <style lang="scss">
+.c-post-template__head {
+	margin-bottom: 8rem;
+
+	@include media('<=t') {
+		margin-bottom: 4rem;
+	}
+
+	@include media('<=m') {
+		margin-bottom: 2rem;
+	}
+}
+
 .nuxt-content {
 	max-width: 60ch;
 	font-size: 2.2rem;
