@@ -1,11 +1,9 @@
 <template>
-    <div class="l-sec">
         <div 
-            class="l-sec__inner"
-            :class="innerClasses">
+            class="l-inner"
+            :class="classes">
             <slot></slot>
         </div>
-    </div>
 </template>
 
 <script>
@@ -18,9 +16,9 @@
             }
         },
         computed: {
-            innerClasses () {
+            classes () {
                 return [
-                    this.isFull ? 'l-sec__inner--full' : ''
+                    this.isFull ? 'l-inner--full' : ''
                 ]
             }
         }
@@ -28,9 +26,7 @@
 </script>
 
 <style lang="scss" scoped>
-    .l-sec {}
-
-    .l-sec__inner {
+    .l-inner {
         max-width: 1360px;
         margin: 0 auto;
         padding: 0 8rem;
@@ -44,7 +40,7 @@
         }
     }
 
-    .l-sec__inner--full {
+    .l-inner--full {
         padding: 0;
     }
 </style>
