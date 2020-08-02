@@ -17,7 +17,9 @@ export default {
     '@/assets/scss/main.scss'
   ],
   components: true,
-  plugins: [],
+  plugins: [
+    '~/plugins/images'
+  ],
   buildModules: [
     '@nuxt/components'
   ],
