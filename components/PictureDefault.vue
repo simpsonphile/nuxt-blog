@@ -3,7 +3,9 @@
         :class="classes"
         class="o-picture">
         <img
-            :src="src"
+            :src="src.src"
+            :srcset="src.srcSet"
+            sizes="(max-width: 480px) 480px, (max-width: 640px) 640px, (max-width: 1280px) 1280px, 1920px"
             :alt="alt" />
     </picture>
 </template>
@@ -14,19 +16,13 @@ export default {
     props: {
         type: {
             type: String,
-            default: 'fluid',
             validator: prop => [
                 'fluid',
                 'fit'
             ].includes(prop)
         },
-        sources: { // TODO add support for sources
-            type: Array,
-            default: () => []
-        },
         src: {
-            type: String,
-            default: '/images/post1.jpg'
+            type: Object
         },
         alt: {
             type: String,
@@ -45,12 +41,16 @@ export default {
 
 <style lang="scss" scoped>
     .o-picture {
+        display: block;
+
         width: 100%;
     }
 
     .o-picture--fit img {
+        display: block;
+
         object-fit: cover;
-        object-position: 50% 0;
+        object-position: 50% 50%;
 
         width: 100%;
         height: 100%;
