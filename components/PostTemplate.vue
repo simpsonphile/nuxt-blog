@@ -1,37 +1,40 @@
 <template>
 	<div class="c-post-template">
 		<div class="c-post-template__head">
-			<layout>
-				<header-default>
-					<heading-default 
-						tag="h1"
-						size="l">
-						{{ title }}
-					</heading-default>
-				</header-default>
-			</layout>
-
-			<layout isFull>
-				<picture-default
-					:src="image"
-					type="fit"
-					style="height: 300px"
-					:alt="title">
-				</picture-default>
-			</layout>
+			<post-head :data="headData"></post-head>
 		</div>
 
-		<layout>
-			<article class="c-post-template__content">
-				<nuxt-content :document="art"></nuxt-content>
-			</article>
-		</layout>
+		
+		<div class="c-post-template__col-3">
+			<post-content :data="art"></post-content>
+		</div>
+
+			<div class="c-post-template__col-1">
+				<div class="sam">
+					{{art.createdAt | formatDate }}<br />
+					{{art.updatedAt | formatDate}}<br />
+					{{ art.category }}<br />
+					{{ art.tags }}<br />
+					{{ art.readingTime | toMinutes }} min read
+					<ul>
+						<li
+							v-for="(link, index) in art.toc"
+							:key="'tag' + index">
+							<a :href="'#' + link.id">
+								{{ link.text }}
+							</a>
+						</li>
+					</ul>
+
+				</div>
+			</div>
+		
 	</div>
 </template>
 
 <script>
 export default {
-	name: "post-content",
+	name: "post-template",
 	props: {
 		art: {
 			type: Object,
@@ -39,90 +42,47 @@ export default {
 		},
 	},
 	computed: {
-		title () {
-			return this.art.title
-		},
 		image () {
 			return this.$images.get(this.art.image)
+		},
+		headData () {
+			return {
+				title: this.art.title,
+				image: this.image
+			}
+		},
+		toc () {
+
 		}
 	}
 };
 </script>
 
 <style lang="scss">
+.c-post-template {
+	display: grid;
+	grid-gap: 2rem;
+	grid-template-columns: 4fr 1fr;
+}
+
+
 .c-post-template__head {
-	margin-bottom: 8rem;
+	grid-column-start: 1;
+	grid-column-end: 5;
+	// margin-bottom: 8rem;
 
-	@include media('<=t') {
-		margin-bottom: 4rem;
-	}
+	// @include media('<=t') {
+	// 	margin-bottom: 4rem;
+	// }
 
-	@include media('<=m') {
-		margin-bottom: 2rem;
-	}
+	// @include media('<=m') {
+	// 	margin-bottom: 2rem;
+	// }
 }
 
-.nuxt-content {
-	max-width: 60ch;
-	font-size: 2.2rem;
-
-	@include media('<=m') {
-		font-size: 1.8rem;
-	}
+.sam {
+	position: sticky;
+	top: 0;
 }
 
-.nuxt-content h1,
-.nuxt-content h2,
-.nuxt-content h3,
-.nuxt-content h4,
-.nuxt-content h5,
-.nuxt-content h6 {
-	margin: 0 0 2rem 0;
-
-	// font-family: $font_primary;
-}
-
-.nuxt-content h2 {
-	font-size: 3.4rem;
-
-	&:not(:first-child) {
-		margin-top: 4rem;
-	}
-
-	@include media('<=m') {
-		font-size: 2.8rem;
-	}
-}
-
-.nuxt-content h3 {
-	font-size: 2.8rem;
-
-	@include media('<=m') {
-		font-size: 2.2rem;
-	}
-}
-
-.nuxt-content h4 {
-	font-size: 2.2rem;
-
-	@include media('<=m') {
-		font-size: 1.8rem;
-	}
-}
-
-.nuxt-content p {
-	margin: 0 0 3.2rem 0;
-
-	&:last-child {
-		margin: 0;
-	}
-}
-
-.nuxt-content picture {
-	margin: 0 0 3.2rem 0;
-
-	&:last-child {
-		margin: 0;
-	}
-}
 </style>
