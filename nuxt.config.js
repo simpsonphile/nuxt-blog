@@ -18,7 +18,8 @@ export default {
   ],
   components: true,
   plugins: [
-    '~/plugins/images'
+    '~/plugins/images',
+    '~/plugins/time'
   ],
   buildModules: [
     '@nuxt/components'
@@ -29,6 +30,15 @@ export default {
     '@nuxtjs/svg-sprite',
     'nuxt-responsive-loader'
   ],
+  hooks: {
+    'content:file:beforeInsert': (document) => {
+      if (document.extension === '.md') {
+        const { time } = require('reading-time')(document.text)
+
+        document.readingTime = time
+      }
+    }
+  },
   styleResources: {
     scss: [
       '@/node_modules/include-media/dist/_include-media.scss',
