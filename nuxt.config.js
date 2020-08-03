@@ -19,7 +19,8 @@ export default {
   components: true,
   plugins: [
     '~/plugins/images',
-    '~/plugins/time'
+    '~/plugins/time',
+    '~/plugins/highlight'
   ],
   buildModules: [
     '@nuxt/components'

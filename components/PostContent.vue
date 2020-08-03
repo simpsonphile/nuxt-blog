@@ -78,4 +78,14 @@ export default {
 		margin: 0;
 	}
 }
+
+.nuxt-content pre {
+	display: flex;
+
+	margin: 0 0 3.2rem 0;
+
+	&:last-child {
+		margin: 0;
+	}
+}
 </style>

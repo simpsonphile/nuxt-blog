@@ -15,6 +15,15 @@ Similar to skeuomorphism, neomorphism makes it challenging to adapt the design t
 
 <image-default src="post2.jpg"></image-default>
 
+<code-highlight>
+addEventListener('load', () => {
+  const code = document.querySelector('#code');
+  const worker = new Worker('worker.js');
+  worker.onmessage = (event) => { code.innerHTML = event.data; }
+  worker.postMessage(code.textContent);
+});
+</code-highlight>
+
 ### Solution
 While it’s better not to rely on neomorphism to create entire UI, yet it is still possible to use in some parts of your product. For example, create some buttons in a neomorphic way.
 
