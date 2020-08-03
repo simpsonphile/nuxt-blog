@@ -1,5 +1,7 @@
 <template>
   <div class="l-app">
-    <Nuxt />
+    <layout>
+      <Nuxt />
+    </layout>
   </div>
 </template>
