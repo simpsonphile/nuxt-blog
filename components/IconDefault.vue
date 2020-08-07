@@ -36,10 +36,7 @@ export default {
 
 <style lang="scss" scoped>
     .o-ico {
-        align-items: center;
-        justify-content: center;
-
-        display: flex;
+        display: inline-block;
     }
 
     .o-ico img,
@@ -48,5 +45,20 @@ export default {
         height: 100%;
 
         fill: currentColor;
+    }
+
+    .o-ico--s {
+        width: 1rem;
+        height: 1rem;
+    }
+
+    .o-ico--m {
+        width: 2rem;
+        height: 2rem;
+    }
+
+    .o-ico--b {
+        width: 3rem;
+        height: 3rem;
     }
 </style>
