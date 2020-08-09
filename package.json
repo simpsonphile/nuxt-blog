@@ -19,7 +19,8 @@
     "normalize.css": "^8.0.1",
     "nuxt": "^2.13.0",
     "nuxt-responsive-loader": "^2.0.1",
-    "reading-time": "^1.2.0"
+    "reading-time": "^1.2.0",
+    "v-click-outside": "^3.0.1"
   },
   "devDependencies": {
     "@vue/test-utils": "^1.0.3",

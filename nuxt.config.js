@@ -20,7 +20,8 @@ export default {
   plugins: [
     '~/plugins/images',
     '~/plugins/time',
-    '~/plugins/highlight'
+    '~/plugins/highlight',
+    '~/plugins/click-outside'
   ],
   buildModules: [
     '@nuxt/components'
