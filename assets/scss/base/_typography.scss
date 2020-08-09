@@ -6,14 +6,27 @@
     /* Colors
     ========================================================================== */
     --ruby: #{$color_ruby};
+    --ruby-t1: #{$color_ruby_t1};
     --ruby-t2: #{$color_ruby_t2};
+    --ruby-t3: #{$color_ruby_t3};
+    --ruby-t4: #{$color_ruby_t4};
 
     --keppel: #{$color_keppel};
     --trueBlue: #{$color_true_blue};
     --tuftsBlue: #{$color_tufts_blue};
     --xiketic: #{$color_xiketic};
+
     --dark: #{$color_dark};
-    --white: #{$color_white};
+    --dark-t1: #{$color_dark_t1};
+    --dark-t2: #{$color_dark_t2};
+    --dark-t3: #{$color_dark_t3};
+    --dark-t4: #{$color_dark_t4};
+
+    --white: #{$color_light};
+    --light-s1: #{$color_light_s1};
+    --light-s2: #{$color_light_s2};
+    --light-s3: #{$color_light_s3};
+    --light-s4: #{$color_light_s4};
 
     --box-shadow-soft: #{$box_shadow_soft};
 
