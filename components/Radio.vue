@@ -179,8 +179,8 @@ input:checked ~ .f-radio__indicator:after {
     --border-color: var(--tuftsBlue);
     --border-color-active: var(--tuftsBlue);
     --box-shadow-focus: var(--box-shadow-soft);
-    --bg-color-disabled: grey;
+    --bg-color-disabled: var(--light-s4);
     --color-after: var(--tuftsBlue);
-    --bg-color-after-disabled: grey;
+    --bg-color-after-disabled: var(--light-s4);
 }
 </style>
