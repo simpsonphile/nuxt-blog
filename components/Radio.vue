@@ -7,6 +7,7 @@
             :value="value"
             :name="name"
             :checked="state"
+            :disabled="disabled"
             type="radio"
             class="f-radio__input"
             @change="updateInput()" />
@@ -48,6 +49,9 @@ export default {
         theme: {
             type: String,
             default: 'circle'
+        },
+        disabled: {
+            type: Boolean
         }
     },
     computed: {
