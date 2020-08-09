@@ -47,17 +47,17 @@ export default {
         fill: currentColor;
     }
 
-    .o-ico--s {
+    .o-ico--s-s {
         width: 1rem;
         height: 1rem;
     }
 
-    .o-ico--m {
+    .o-ico--s-m {
         width: 2rem;
         height: 2rem;
     }
 
-    .o-ico--b {
+    .o-ico--s-b {
         width: 3rem;
         height: 3rem;
     }
