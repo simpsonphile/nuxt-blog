@@ -97,6 +97,8 @@ export default {
 
         &:hover {
             background-color: var(--bg-color-hover);
+            border-color: var(--border-color-hover);
+            color: var(--color-hover);
         }
     }
 
@@ -121,6 +123,8 @@ export default {
 
     /* Types
     ========================================================================== */
+        /* Primary
+        ====================================================================== */
     .c-btn--th-primary {
         height: 4rem;
         padding: 0 1.6rem;
@@ -131,14 +135,38 @@ export default {
     }
 
     .c-btn--th-primary.c-btn--v-1 {
+        --border-color: var(--ruby);
         --bg-color: var(--ruby);
         --color: var(--white);
 
         --bg-color-hover: var(--ruby-t2);
+        --border-color-hover: var(--ruby-t2);
+        --color-hover: var(--white);
     }
 
     .c-btn--th-primary.c-btn--v-2 {
         --border-color: var(--ruby);
         --color: var(--ruby);
+
+        --border-color-over: var(--ruby-t2);
+        --color-hover: var(--ruby-t2);
+    }
+
+        /* Tag
+        ====================================================================== */
+    .c-btn--th-tag {
+        padding: .2rem .4rem;
+
+        border-radius: .8rem;
+
+        font-size: 1.2rem;
+    }
+
+    .c-btn--th-tag.c-btn--v-1 {
+        --bg-color: var(--ruby);
+        --color: var(--white);
+
+        --bg-color-hover: var(--ruby-t2);
+        --color-hover: var(--white);
     }
 </style>
