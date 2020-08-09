@@ -4,6 +4,7 @@
         :href="tag === 'a' ? href : false"
         :to="tag === 'nuxt-link' ? href : false"
         :type="tag === 'button' ? type : false"
+        :target="target"
         class="c-btn"
         :class="classes">
         <div class="c-btn__wrapper">
@@ -42,6 +43,9 @@ export default {
             type: String,
             default: 'button'
         },
+        target: {
+            type: String
+        },
         theme: {
             type: String,
             default: 'primary',
@@ -73,8 +77,13 @@ export default {
         padding: 0;
         margin: 0;
 
+        background-color: var(--bg-color);
         border: 0;
+        border-color: var(--border-color);
         cursor: pointer;
+        color: var(--color);
+
+        font-family: var(--font-normal);
 
         transition: all $transition_speed;
 
@@ -84,6 +93,10 @@ export default {
 
         &:disabled {
             cursor: not-allowed;
+        }
+
+        &:hover {
+            background-color: var(--bg-color-hover);
         }
     }
 
@@ -113,14 +126,8 @@ export default {
         padding: 0 1.6rem;
 
         border-radius: .8rem;
-        background-color: var(--bg-color);
-        color: var(--color);
-
-        font-family: var(--font-normal);
-
-        &:hover {
-            background-color: var(--bg-color-hover);
-        }
+        border-width: 2px;
+        border-style: solid;
     }
 
     .c-btn--th-primary.c-btn--v-1 {
@@ -128,5 +135,10 @@ export default {
         --color: var(--white);
 
         --bg-color-hover: var(--ruby-t2);
+    }
+
+    .c-btn--th-primary.c-btn--v-2 {
+        --border-color: var(--ruby);
+        --color: var(--ruby);
     }
 </style>
